@@ -20,3 +20,18 @@ export interface AddTaskFormProps {
   setNewTaskCategory: (category: Category) => void;
   handleAddTask: (e: React.FormEvent<HTMLFormElement>) => void;
 }
+
+export interface FilterControlsProps {
+  filter: string;
+  setFilter: (filter: string) => void;
+}
+
+export interface SortableTaskItemProps {
+  task: Task;
+  isEditing: boolean;
+  toggleComplete: (id: string) => void;
+  deleteTask: (id: string) => void;
+  startEditing: (id: string, currentText: string) => void;
+  setEditingTaskText: (id: string, newText: string) => void;
+  saveEdit: (id: string) => void;
+}

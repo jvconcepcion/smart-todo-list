@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Task, Category } from '@/types';
 
 export default function useTodos() {
@@ -41,14 +41,23 @@ export default function useTodos() {
     setNewTaskText('');
   };
 
+    // filtering
+  const filteredTasks = useMemo(() => {
+    if (filter === 'All') return tasks;
+    return tasks.filter(task => task.category === filter);
+  }, [tasks, filter]);
+
   return {
     // derived state
     newTaskText,
     newTaskCategory,
+    filter,
 
     // state setters & handlers
     setNewTaskText,
     setNewTaskCategory,
+    setFilter,
     handleAddTask,
+    filteredTasks,
   }
 }

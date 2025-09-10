@@ -1,4 +1,4 @@
-import { AddTaskForm } from '@/components';
+import { AddTaskForm, FilterControls } from '@/components';
 import { useTodos } from './hooks';
 
 function App() {
@@ -6,9 +6,12 @@ function App() {
   const {
     newTaskText,
     newTaskCategory,
+    filter,
     setNewTaskText,
     setNewTaskCategory,
+    setFilter,
     handleAddTask,
+    filteredTasks,
   } = useTodos();
 
   return (
@@ -29,6 +32,8 @@ function App() {
         setNewTaskCategory={setNewTaskCategory}
         handleAddTask={handleAddTask}
       />
+
+      <FilterControls filter={filter} setFilter={setFilter} />
     </div>
   )
 }
