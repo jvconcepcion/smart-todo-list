@@ -1,5 +1,5 @@
-import React from 'react'
-import { Category, CategoryPillProps } from '@/types'
+import React from 'react';
+import { Category, CategoryPillProps } from '@/types';
 
 const CategoryPill: React.FC<CategoryPillProps> = ({ category }) => {
   const categoryStyles: Record<Category | 'Default', string> = {

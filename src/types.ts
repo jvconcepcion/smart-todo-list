@@ -12,3 +12,11 @@ export interface Task {
 export interface CategoryPillProps {
   category: Category;
 }
+
+export interface AddTaskFormProps {
+  newTaskText: string;
+  setNewTaskText: (text: string) => void;
+  newTaskCategory: Category;
+  setNewTaskCategory: (category: Category) => void;
+  handleAddTask: (e: React.FormEvent<HTMLFormElement>) => void;
+}
