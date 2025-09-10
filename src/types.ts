@@ -8,3 +8,7 @@ export interface Task {
   completed: boolean;
   category: Category;
 }
+
+export interface CategoryPillProps {
+  category: Category;
+}
